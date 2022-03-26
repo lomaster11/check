@@ -3,7 +3,7 @@ from threading import Thread
 import requests, ctypes
 
 
-ctypes.windll.kernel32.SetConsoleTitleW("Private key Checker v1.0 | Total - 0.0$")
+#ctypes.windll.kernel32.SetConsoleTitleW("Private key Checker v1.0 | Total - 0.0$")
 
 
 threadc = int(input("Введи количество потоков: "))
@@ -30,7 +30,7 @@ def checker(data):
                 #print(f"{acct}")
                 json_bal = requests.get(f"https://openapi.debank.com/v1/user/total_balance?id={acct}").json()
                 total = float(total) + float(json_bal['total_usd_value'])
-                ctypes.windll.kernel32.SetConsoleTitleW(f"Private key Checker v1.0 | Total - {total}$")
+                #ctypes.windll.kernel32.SetConsoleTitleW(f"Private key Checker v1.0 | Total - {total}$")
                 count1+=1*int(threadc)
                 #print(f"\nAddress: {acct}\nFull Balance: {json_bal['total_usd_value']}\n-----------------------------------")
                 #print(f"Checked: {count1}/{line_count}")
